@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página Principal com Iframes Aninhados</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 10px;
+        font-family: sans-serif;
+      }
+      iframe {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Formulário de Autotexto</h1>
+    <form>
+      <fieldset>
+        <legend>Informações Gerais</legend>
+        
+        <label for="autotext_content">Conteúdo/Descrição:</label><br />
+        <textarea id="autotext_content" name="autotext_content"></textarea><br />
+
+        <label for="autotext_type">Tipo:</label><br />
+        <input type="text" id="autotext_type" name="autotext_type" /><br />
+
+        <label for="autotext_squad">Squad:</label><br />
+        <input type="text" id="autotext_squad" name="autotext_squad" /><br />
+
+        <label for="autotext_checkpoint">Checkpoint:</label><br />
+        <input type="text" id="autotext_checkpoint" name="autotext_checkpoint" /><br />
+
+        <label for="autotext_time">Tempo (SLA):</label><br />
+        <input type="text" id="autotext_time" name="autotext_time" /><br />
+
+        <label for="autotext_location">Localização:</label><br />
+        <input type="text" id="autotext_location" name="autotext_location" /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados de Abertura (Opening)</legend>
+        <label for="autotext_service_opening">Serviço de Abertura:</label><br />
+        <input type="text" id="autotext_service_opening" name="autotext_service_opening" /><br />
+
+        <label for="autotext_item_opening">Item de Abertura:</label><br />
+        <input type="text" id="autotext_item_opening" name="autotext_item_opening" /><br />
+
+        <label for="autotext_category_opening">Categoria de Abertura:</label><br />
+        <input type="text" id="autotext_category_opening" name="autotext_category_opening" /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados de Triagem (Triaging)</legend>
+        <label for="autotext_service_triaging">Serviço de Triagem:</label><br />
+        <input type="text" id="autotext_service_triaging" name="autotext_service_triaging" /><br />
+
+        <label for="autotext_item_triaging">Item de Triagem:</label><br />
+        <input type="text" id="autotext_item_triaging" name="autotext_item_triaging" /><br />
+
+        <label for="autotext_category_triaging">Categoria de Triagem:</label><br />
+        <input type="text" id="autotext_category_triaging" name="autotext_category_triaging" /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados de Fechamento (Closing)</legend>
+        <label for="autotext_service_closing">Serviço de Fechamento:</label><br />
+        <input type="text" id="autotext_service_closing" name="autotext_service_closing" /><br />
+
+        <label for="autotext_item_closing">Item de Fechamento:</label><br />
+        <input type="text" id="autotext_item_closing" name="autotext_item_closing" /><br />
+
+        <label for="autotext_category_closing">Categoria de Fechamento:</label><br />
+        <input type="text" id="autotext_category_closing" name="autotext_category_closing" /><br />
+      </fieldset>
+    </form>
+  </body>
+</html>
