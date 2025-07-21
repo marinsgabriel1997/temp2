@@ -22,11 +22,11 @@
       <fieldset>
         <legend>Informações Gerais</legend>
         
-        <label for="autotext_content">Conteúdo/Descrição:</label><br />
-        <textarea id="autotext_content" name="autotext_content" rows="10" cols="30"></textarea><br />
+        <label for="exemplo-site-extension-autotext_content">Conteúdo/Descrição:</label><br />
+        <textarea id="exemplo-site-extension-autotext_content" name="autotext_content" rows="100" cols="300"></textarea><br />
 
-        <label for="autotext_type">Tipo:</label><br />
-        <select id="autotext_type" name="autotext_type" >
+        <label for="exemplo-site-extension-autotext_type">Tipo:</label><br />
+        <select id="exemplo-site-extension-autotext_type" name="autotext_type" >
           <option value=""></option>
           <option value="Devolução">Devolução</option>
           <option value="Incidente">Incidente</option>
@@ -35,8 +35,9 @@
           <option value="Requisição">Requisição</option>
         </select><br />
 
-        <label for="autotext_squad">Squad:</label><br />
-        <select id="autotext_squad" name="autotext_squad" >
+        <label for="exemplo-site-extension-autotext_squad">Squad:</label><br />
+        <!-- aqui é squad mesmo, não alterar para team! -->
+        <select id="exemplo-site-extension-autotext_squad" name="autotext_squad" >
           <option value=""></option>
           <option value="ALFA">ALFA</option>
           <option value="BRAVO">BRAVO</option>
@@ -45,14 +46,14 @@
           <option value="GOLF">GOLF</option>
         </select><br />
 
-        <label for="autotext_checkpoint">Checkpoint:</label><br />
-        <input type="number" id="autotext_checkpoint" name="autotext_checkpoint" /><br />
+        <label for="exemplo-site-extension-autotext_checkpoint">Checkpoint:</label><br />
+        <input type="number" id="exemplo-site-extension-autotext_checkpoint" name="autotext_checkpoint" /><br />
 
-        <label for="autotext_time">Tempo (SLA):</label><br />
-        <input type="time" id="autotext_time" name="autotext_time" /><br />
+        <label for="exemplo-site-extension-autotext_time">Tempo (SLA):</label><br />
+        <input type="time" id="exemplo-site-extension-autotext_time" name="autotext_time" /><br />
 
-        <label for="autotext_location">Localização:</label><br />
-        <select id="autotext_location" name="autotext_location" >
+        <label for="exemplo-site-extension-autotext_location">Localização:</label><br />
+        <select id="exemplo-site-extension-autotext_location" name="autotext_location" >
           <option value=""></option>
           <option value="CLIENTE">CLIENTE</option>
           <option value="FORNECEDOR">FORNECEDOR</option>
@@ -65,24 +66,24 @@
 
       <fieldset>
         <legend>Dados de Abertura (Opening)</legend>
-        <label for="autotext_service_opening">Serviço de Abertura:</label><br />
-        <select id="autotext_service_opening" name="autotext_service_opening" >
+        <label for="exemplo-site-extension-autotext_service_opening">Serviço de Abertura:</label><br />
+        <select id="exemplo-site-extension-autotext_service_opening" name="autotext_service_opening" >
           <option value=""></option>
           <option value="1">Serviço 1</option>
           <option value="2">Serviço 2</option>
           <option value="3">Serviço 3</option>
         </select><br />
 
-        <label for="autotext_item_opening">Item de Abertura:</label><br />
-        <select id="autotext_item_opening" name="autotext_item_opening" >
+        <label for="exemplo-site-extension-autotext_item_opening">Item de Abertura:</label><br />
+        <select id="exemplo-site-extension-autotext_item_opening" name="autotext_item_opening" >
           <option value=""></option>
           <option value="1">Item 1</option>
           <option value="2">Item 2</option>
           <option value="3">Item 3</option>
         </select><br />
 
-        <label for="autotext_category_opening">Categoria de Abertura:</label><br />   
-        <select id="autotext_category_opening" name="autotext_category_opening" >
+        <label for="exemplo-site-extension-autotext_category_opening">Categoria de Abertura:</label><br />   
+        <select id="exemplo-site-extension-autotext_category_opening" name="autotext_category_opening" >
           <option value=""></option>
           <option value="1">Categoria 1</option>
           <option value="2">Categoria 2</option>
@@ -92,24 +93,24 @@
 
       <fieldset>
         <legend>Dados de Triagem (Triaging)</legend>
-        <label for="autotext_service_triaging">Serviço de Triagem:</label><br />
-        <select id="autotext_service_triaging" name="autotext_service_triaging" >
+        <label for="exemplo-site-extension-autotext_service_triaging">Serviço de Triagem:</label><br />
+        <select id="exemplo-site-extension-autotext_service_triaging" name="autotext_service_triaging" >
           <option value=""></option>
           <option value="1">Serviço 1</option>
           <option value="2">Serviço 2</option>
           <option value="3">Serviço 3</option>
         </select><br />
 
-        <label for="autotext_item_triaging">Item de Triagem:</label><br />
-        <select id="autotext_item_triaging" name="autotext_item_triaging" >
+        <label for="exemplo-site-extension-autotext_item_triaging">Item de Triagem:</label><br />
+        <select id="exemplo-site-extension-autotext_item_triaging" name="autotext_item_triaging" >
           <option value=""></option>
           <option value="1">Item 1</option>
           <option value="2">Item 2</option>
           <option value="3">Item 3</option>
         </select><br />
 
-        <label for="autotext_category_triaging">Categoria de Triagem:</label><br />
-        <select id="autotext_category_triaging" name="autotext_category_triaging" >
+        <label for="exemplo-site-extension-autotext_category_triaging">Categoria de Triagem:</label><br />
+        <select id="exemplo-site-extension-autotext_category_triaging" name="autotext_category_triaging" >
           <option value=""></option>
           <option value="1">Categoria 1</option>
           <option value="2">Categoria 2</option>
@@ -119,24 +120,24 @@
 
       <fieldset>
         <legend>Dados de Fechamento (Closing)</legend>
-        <label for="autotext_service_closing">Serviço de Fechamento:</label><br />
-        <select id="autotext_service_closing" name="autotext_service_closing" >
+        <label for="exemplo-site-extension-autotext_service_closing">Serviço de Fechamento:</label><br />
+        <select id="exemplo-site-extension-autotext_service_closing" name="autotext_service_closing" >
           <option value=""></option>
           <option value="1">Serviço 1</option>
           <option value="2">Serviço 2</option>
           <option value="3">Serviço 3</option>
         </select><br />
 
-        <label for="autotext_item_closing">Item de Fechamento:</label><br />
-        <select id="autotext_item_closing" name="autotext_item_closing" >
+        <label for="exemplo-site-extension-autotext_item_closing">Item de Fechamento:</label><br />
+        <select id="exemplo-site-extension-autotext_item_closing" name="autotext_item_closing" >
           <option value=""></option>
           <option value="1">Item 1</option>
           <option value="2">Item 2</option>
           <option value="3">Item 3</option>
         </select><br />
 
-        <label for="autotext_category_closing">Categoria de Fechamento:</label><br />
-          <select id="autotext_category_closing" name="autotext_category_closing" >
+        <label for="exemplo-site-extension-autotext_category_closing">Categoria de Fechamento:</label><br />
+          <select id="exemplo-site-extension-autotext_category_closing" name="autotext_category_closing" >
           <option value=""></option>
           <option value="1">Categoria 1</option>
           <option value="2">Categoria 2</option>
