@@ -1,149 +1,338 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Página Principal com Iframes Aninhados</title>
+    <title>Formulário de Autotexto - Compacto</title>
     <style>
-      body {
+      * {
         margin: 0;
-        padding: 10px;
-        width: 100%;
-        height: 1000px;
-        font-family: sans-serif;
+        padding: 0;
+        box-sizing: border-box;
       }
-      iframe {
-        border: 1px solid #ccc;
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f5f5f5;
+        padding: 10px;
+        color: #333;
+        font-size: 13px;
+      }
+
+      .form-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .form-header {
+        background: #4a90e2;
+        color: white;
+        padding: 6px 10px;
+        text-align: center;
+      }
+
+      .form-header h1 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      form {
+        padding: 10px;
+      }
+
+      fieldset {
+        border: 1px solid #ddd;
         margin-bottom: 10px;
+        border-radius: 4px;
+        padding: 10px;
+        background: #fafafa;
+      }
+
+      legend {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #4a90e2;
+        padding: 0 8px;
+        background: white;
+      }
+
+      label {
+        display: block;
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 3px;
+        margin-top: 8px;
+        font-size: 10px;
+      }
+
+      input, select, textarea {
+        width: 100%;
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 10px;
+        font-family: inherit;
+        background: white;
+      }
+
+      input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 60px;
+        line-height: 1.3;
+      }
+
+      select {
+        cursor: pointer;
+        height: 28px;
+      }
+
+      input[type="number"], input[type="time"] {
+        max-width: 150px;
+      }
+
+      /* Compact grid layout */
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Main textarea smaller */
+      #exemplo-site-extension-autotext_content {
+        min-height: 80px;
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+      }
+
+      /* Compact button */
+      .button-container {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 15px;
+        border-top: 1px solid #eee;
+      }
+
+      .submit-btn {
+        background: #4a90e2;
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .submit-btn:hover {
+        background: #357abd;
+      }
+
+      /* Mobile adjustments */
+      @media (max-width: 768px) {
+        body {
+          padding: 5px;
+        }
+        
+        form {
+          padding: 10px;
+        }
+        
+        fieldset {
+          padding: 2px;
+        }
+        
+        .form-grid {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Formulário de Autotexto</h1>
-    <form>
-      <fieldset>
-        <legend>Informações Gerais</legend>
-        
-        <label for="exemplo-site-extension-autotext_content">Conteúdo/Descrição:</label><br />
-        <textarea id="exemplo-site-extension-autotext_content" name="autotext_content" rows="100" cols="300"></textarea><br />
+    <div class="form-container">
+     
+      <form>
+        <fieldset>
+          <legend>Informações Gerais</legend>
+          
+          <div class="form-group">
+            <label for="exemplo-site-extension-autotext_content">Conteúdo/Descrição:</label>
+            <textarea id="exemplo-site-extension-autotext_content" name="autotext_content" rows="4" placeholder="Digite o conteúdo..."></textarea>
+          </div>
 
-        <label for="exemplo-site-extension-autotext_type">Tipo:</label><br />
-        <select id="exemplo-site-extension-autotext_type" name="autotext_type" >
-          <option value=""></option>
-          <option value="Devolução">Devolução</option>
-          <option value="Incidente">Incidente</option>
-          <option value="Incidente Massivo">Incidente Massivo</option>
-          <option value="Melhoria">Melhoria</option>
-          <option value="Requisição">Requisição</option>
-        </select><br />
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_type">Tipo:</label>
+              <select id="exemplo-site-extension-autotext_type" name="autotext_type">
+                <option value="">Selecione...</option>
+                <option value="Devolução">Devolução</option>
+                <option value="Incidente">Incidente</option>
+                <option value="Incidente Massivo">Incidente Massivo</option>
+                <option value="Melhoria">Melhoria</option>
+                <option value="Requisição">Requisição</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_squad">Squad:</label><br />
-        <!-- aqui é squad mesmo, não alterar para team! -->
-        <select id="exemplo-site-extension-autotext_squad" name="autotext_squad" >
-          <option value=""></option>
-          <option value="ALFA">ALFA</option>
-          <option value="BRAVO">BRAVO</option>
-          <option value="CHARLIE">CHARLIE</option>
-          <option value="DELTA">DELTA</option>
-          <option value="GOLF">GOLF</option>
-        </select><br />
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_squad">Squad:</label>
+              <select id="exemplo-site-extension-autotext_squad" name="autotext_squad">
+                <option value="">Selecione...</option>
+                <option value="ALFA">ALFA</option>
+                <option value="BRAVO">BRAVO</option>
+                <option value="CHARLIE">CHARLIE</option>
+                <option value="DELTA">DELTA</option>
+                <option value="GOLF">GOLF</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_checkpoint">Checkpoint:</label><br />
-        <input type="number" id="exemplo-site-extension-autotext_checkpoint" name="autotext_checkpoint" /><br />
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_checkpoint">Checkpoint:</label>
+              <input type="number" id="exemplo-site-extension-autotext_checkpoint" name="autotext_checkpoint" placeholder="1, 2, 3..." />
+            </div>
 
-        <label for="exemplo-site-extension-autotext_time">Tempo (SLA):</label><br />
-        <input type="time" id="exemplo-site-extension-autotext_time" name="autotext_time" /><br />
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_time">Tempo (SLA):</label>
+              <input type="time" id="exemplo-site-extension-autotext_time" name="autotext_time" />
+            </div>
 
-        <label for="exemplo-site-extension-autotext_location">Localização:</label><br />
-        <select id="exemplo-site-extension-autotext_location" name="autotext_location" >
-          <option value=""></option>
-          <option value="CLIENTE">CLIENTE</option>
-          <option value="FORNECEDOR">FORNECEDOR</option>
-          <option value="PROGRAMADA">PROGRAMADA</option>
-          <option value="REGIONAL">REGIONAL</option>
-          <option value="STI">STI</option>
-          <option value="TIT">TIT</option>
-        </select><br />
-      </fieldset>
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_location">Localização:</label>
+              <select id="exemplo-site-extension-autotext_location" name="autotext_location">
+                <option value="">Selecione...</option>
+                <option value="CLIENTE">CLIENTE</option>
+                <option value="FORNECEDOR">FORNECEDOR</option>
+                <option value="PROGRAMADA">PROGRAMADA</option>
+                <option value="REGIONAL">REGIONAL</option>
+                <option value="STI">STI</option>
+                <option value="TIT">TIT</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <legend>Dados de Abertura (Opening)</legend>
-        <label for="exemplo-site-extension-autotext_service_opening">Serviço de Abertura:</label><br />
-        <select id="exemplo-site-extension-autotext_service_opening" name="autotext_service_opening" >
-          <option value=""></option>
-          <option value="1">Serviço 1</option>
-          <option value="2">Serviço 2</option>
-          <option value="3">Serviço 3</option>
-        </select><br />
+        <fieldset>
+          <legend>Dados de Abertura</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_service_opening">Serviço de Abertura:</label>
+              <select id="exemplo-site-extension-autotext_service_opening" name="autotext_service_opening">
+                <option value="">Selecione...</option>
+                <option value="1">Serviço 1</option>
+                <option value="2">Serviço 2</option>
+                <option value="3">Serviço 3</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_item_opening">Item de Abertura:</label><br />
-        <select id="exemplo-site-extension-autotext_item_opening" name="autotext_item_opening" >
-          <option value=""></option>
-          <option value="1">Item 1</option>
-          <option value="2">Item 2</option>
-          <option value="3">Item 3</option>
-        </select><br />
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_item_opening">Item de Abertura:</label>
+              <select id="exemplo-site-extension-autotext_item_opening" name="autotext_item_opening">
+                <option value="">Selecione...</option>
+                <option value="1">Item 1</option>
+                <option value="2">Item 2</option>
+                <option value="3">Item 3</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_category_opening">Categoria de Abertura:</label><br />   
-        <select id="exemplo-site-extension-autotext_category_opening" name="autotext_category_opening" >
-          <option value=""></option>
-          <option value="1">Categoria 1</option>
-          <option value="2">Categoria 2</option>
-          <option value="3">Categoria 3</option>
-        </select><br />
-      </fieldset>
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_category_opening">Categoria de Abertura:</label>   
+              <select id="exemplo-site-extension-autotext_category_opening" name="autotext_category_opening">
+                <option value="">Selecione...</option>
+                <option value="1">Categoria 1</option>
+                <option value="2">Categoria 2</option>
+                <option value="3">Categoria 3</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <legend>Dados de Triagem (Triaging)</legend>
-        <label for="exemplo-site-extension-autotext_service_triaging">Serviço de Triagem:</label><br />
-        <select id="exemplo-site-extension-autotext_service_triaging" name="autotext_service_triaging" >
-          <option value=""></option>
-          <option value="1">Serviço 1</option>
-          <option value="2">Serviço 2</option>
-          <option value="3">Serviço 3</option>
-        </select><br />
+        <fieldset>
+          <legend>Dados de Triagem</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_service_triaging">Serviço de Triagem:</label>
+              <select id="exemplo-site-extension-autotext_service_triaging" name="autotext_service_triaging">
+                <option value="">Selecione...</option>
+                <option value="1">Serviço 1</option>
+                <option value="2">Serviço 2</option>
+                <option value="3">Serviço 3</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_item_triaging">Item de Triagem:</label><br />
-        <select id="exemplo-site-extension-autotext_item_triaging" name="autotext_item_triaging" >
-          <option value=""></option>
-          <option value="1">Item 1</option>
-          <option value="2">Item 2</option>
-          <option value="3">Item 3</option>
-        </select><br />
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_item_triaging">Item de Triagem:</label>
+              <select id="exemplo-site-extension-autotext_item_triaging" name="autotext_item_triaging">
+                <option value="">Selecione...</option>
+                <option value="1">Item 1</option>
+                <option value="2">Item 2</option>
+                <option value="3">Item 3</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_category_triaging">Categoria de Triagem:</label><br />
-        <select id="exemplo-site-extension-autotext_category_triaging" name="autotext_category_triaging" >
-          <option value=""></option>
-          <option value="1">Categoria 1</option>
-          <option value="2">Categoria 2</option>
-          <option value="3">Categoria 3</option>
-        </select><br />
-      </fieldset>
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_category_triaging">Categoria de Triagem:</label>
+              <select id="exemplo-site-extension-autotext_category_triaging" name="autotext_category_triaging">
+                <option value="">Selecione...</option>
+                <option value="1">Categoria 1</option>
+                <option value="2">Categoria 2</option>
+                <option value="3">Categoria 3</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <legend>Dados de Fechamento (Closing)</legend>
-        <label for="exemplo-site-extension-autotext_service_closing">Serviço de Fechamento:</label><br />
-        <select id="exemplo-site-extension-autotext_service_closing" name="autotext_service_closing" >
-          <option value=""></option>
-          <option value="1">Serviço 1</option>
-          <option value="2">Serviço 2</option>
-          <option value="3">Serviço 3</option>
-        </select><br />
+        <fieldset>
+          <legend>Dados de Fechamento</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_service_closing">Serviço de Fechamento:</label>
+              <select id="exemplo-site-extension-autotext_service_closing" name="autotext_service_closing">
+                <option value="">Selecione...</option>
+                <option value="1">Serviço 1</option>
+                <option value="2">Serviço 2</option>
+                <option value="3">Serviço 3</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_item_closing">Item de Fechamento:</label><br />
-        <select id="exemplo-site-extension-autotext_item_closing" name="autotext_item_closing" >
-          <option value=""></option>
-          <option value="1">Item 1</option>
-          <option value="2">Item 2</option>
-          <option value="3">Item 3</option>
-        </select><br />
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_item_closing">Item de Fechamento:</label>
+              <select id="exemplo-site-extension-autotext_item_closing" name="autotext_item_closing">
+                <option value="">Selecione...</option>
+                <option value="1">Item 1</option>
+                <option value="2">Item 2</option>
+                <option value="3">Item 3</option>
+              </select>
+            </div>
 
-        <label for="exemplo-site-extension-autotext_category_closing">Categoria de Fechamento:</label><br />
-          <select id="exemplo-site-extension-autotext_category_closing" name="autotext_category_closing" >
-          <option value=""></option>
-          <option value="1">Categoria 1</option>
-          <option value="2">Categoria 2</option>
-          <option value="3">Categoria 3</option>
-        </select><br />
-      </fieldset>
-    </form>
+            <div class="form-group">
+              <label for="exemplo-site-extension-autotext_category_closing">Categoria de Fechamento:</label>
+              <select id="exemplo-site-extension-autotext_category_closing" name="autotext_category_closing">
+                <option value="">Selecione...</option>
+                <option value="1">Categoria 1</option>
+                <option value="2">Categoria 2</option>
+                <option value="3">Categoria 3</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="button-container">
+          <button type="submit" class="submit-btn">Salvar</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
