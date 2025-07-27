@@ -141,6 +141,35 @@
         background: #357abd;
       }
 
+      /* Radio buttons styling */
+      .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .radio-item {
+        display: flex;
+        align-items: center;
+        margin-right: 12px;
+        margin-bottom: 4px;
+      }
+
+      .radio-item input[type="radio"] {
+        width: auto;
+        margin: 0 4px 0 0;
+        padding: 0;
+      }
+
+      .radio-item label {
+        margin: 0;
+        font-size: 11px;
+        font-weight: normal;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
       /* Mobile adjustments */
       @media (max-width: 768px) {
         body {
@@ -159,6 +188,11 @@
           grid-template-columns: 1fr;
           gap: 2px;
         }
+
+        .radio-group {
+          flex-direction: column;
+          gap: 4px;
+        }
       }
     </style>
   </head>
@@ -176,16 +210,31 @@
 
           <div class="form-grid">
             <div class="form-group">
-              <label for="exemplo-site-extension-autotext_type">Tipo:</label>
-              <select id="exemplo-site-extension-autotext_type" name="autotext_type">
-                <option value="">Selecione...</option>
-                <option value="Devolução">Devolução</option>
-                <option value="Incidente">Incidente</option>
-                <option value="Incidente Massivo">Incidente Massivo</option>
-                <option value="Melhoria">Melhoria</option>
-                <option value="Requisição">Requisição</option>
-              </select>
+              <label>Tipo:</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="autotext_type_requisicao" name="autotext_type" value="Requisição">
+                  <label for="autotext_type_requisicao">Requisição</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="autotext_type_incidente" name="autotext_type" value="Incidente">
+                  <label for="autotext_type_incidente">Incidente</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="autotext_type_massivo" name="autotext_type" value="Incidente Massivo">
+                  <label for="autotext_type_massivo">Massivo</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="autotext_type_melhoria" name="autotext_type" value="Melhoria">
+                  <label for="autotext_type_melhoria">Melhoria</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="autotext_type_devolucao" name="autotext_type" value="Devolução">
+                  <label for="autotext_type_devolucao">Devolução</label>
+                </div>
+              </div>
             </div>
+          </div>
 
             <div class="form-group">
               <label for="exemplo-site-extension-autotext_squad">Squad:</label>
@@ -201,12 +250,12 @@
 
             <div class="form-group">
               <label for="exemplo-site-extension-autotext_checkpoint">Checkpoint:</label>
-              <input type="number" id="exemplo-site-extension-autotext_checkpoint" name="autotext_checkpoint" placeholder="1, 2, 3..." />
+              <input type="text" id="exemplo-site-extension-autotext_checkpoint" name="autotext_checkpoint" placeholder="1, 2, 3..." />
             </div>
 
             <div class="form-group">
               <label for="exemplo-site-extension-autotext_time">Tempo (SLA):</label>
-              <input type="time" id="exemplo-site-extension-autotext_time" name="autotext_time" />
+              <input type="text" id="exemplo-site-extension-autotext_time" name="autotext_time" />
             </div>
 
             <div class="form-group">
@@ -231,9 +280,10 @@
               <label for="exemplo-site-extension-autotext_service_opening">Serviço de Abertura:</label>
               <select id="exemplo-site-extension-autotext_service_opening" name="autotext_service_opening">
                 <option value="">Selecione...</option>
-                <option value="1">Serviço 1</option>
-                <option value="2">Serviço 2</option>
-                <option value="3">Serviço 3</option>
+                <option value="1">Serviço Abertura 1</option>
+                <option value="2">Serviço Abertura 2</option>
+                <option value="3">Serviço Abertura 3</option>
+                <option value="4">Serviço Abertura 4</option>
               </select>
             </div>
 
@@ -241,9 +291,10 @@
               <label for="exemplo-site-extension-autotext_item_opening">Item de Abertura:</label>
               <select id="exemplo-site-extension-autotext_item_opening" name="autotext_item_opening">
                 <option value="">Selecione...</option>
-                <option value="1">Item 1</option>
-                <option value="2">Item 2</option>
-                <option value="3">Item 3</option>
+                <option value="1">Item Abertura 1</option>
+                <option value="2">Item Abertura 2</option>
+                <option value="3">Item Abertura 3</option>
+                <option value="4">Item Abertura 4</option>
               </select>
             </div>
 
@@ -251,9 +302,10 @@
               <label for="exemplo-site-extension-autotext_category_opening">Categoria de Abertura:</label>   
               <select id="exemplo-site-extension-autotext_category_opening" name="autotext_category_opening">
                 <option value="">Selecione...</option>
-                <option value="1">Categoria 1</option>
-                <option value="2">Categoria 2</option>
-                <option value="3">Categoria 3</option>
+                <option value="1">Categoria Abertura 1</option>
+                <option value="2">Categoria Abertura 2</option>
+                <option value="3">Categoria Abertura 3</option>
+                <option value="4">Categoria Abertura 4</option>
               </select>
             </div>
           </div>
@@ -266,9 +318,10 @@
               <label for="exemplo-site-extension-autotext_service_triaging">Serviço de Triagem:</label>
               <select id="exemplo-site-extension-autotext_service_triaging" name="autotext_service_triaging">
                 <option value="">Selecione...</option>
-                <option value="1">Serviço 1</option>
-                <option value="2">Serviço 2</option>
-                <option value="3">Serviço 3</option>
+                <option value="1">Serviço Triagem 1</option>
+                <option value="2">Serviço Triagem 2</option>
+                <option value="3">Serviço Triagem 3</option>
+                <option value="4">Serviço Triagem 4</option>
               </select>
             </div>
 
@@ -276,9 +329,10 @@
               <label for="exemplo-site-extension-autotext_item_triaging">Item de Triagem:</label>
               <select id="exemplo-site-extension-autotext_item_triaging" name="autotext_item_triaging">
                 <option value="">Selecione...</option>
-                <option value="1">Item 1</option>
-                <option value="2">Item 2</option>
-                <option value="3">Item 3</option>
+                <option value="1">Item Triagem 1</option>
+                <option value="2">Item Triagem 2</option>
+                <option value="3">Item Triagem 3</option>
+                <option value="4">Item Triagem 4</option>
               </select>
             </div>
 
@@ -286,44 +340,48 @@
               <label for="exemplo-site-extension-autotext_category_triaging">Categoria de Triagem:</label>
               <select id="exemplo-site-extension-autotext_category_triaging" name="autotext_category_triaging">
                 <option value="">Selecione...</option>
-                <option value="1">Categoria 1</option>
-                <option value="2">Categoria 2</option>
-                <option value="3">Categoria 3</option>
+                <option value="1">Categoria Triagem 1</option>
+                <option value="2">Categoria Triagem 2</option>
+                <option value="3">Categoria Triagem 3</option>
+                <option value="4">Categoria Triagem 4</option>
               </select>
             </div>
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>Dados de Fechamento</legend>
+          <legend>Dados de Conclusão</legend>
           <div class="form-grid">
             <div class="form-group">
-              <label for="exemplo-site-extension-autotext_service_closing">Serviço de Fechamento:</label>
+              <label for="exemplo-site-extension-autotext_service_closing">Serviço de Conclusão:</label>
               <select id="exemplo-site-extension-autotext_service_closing" name="autotext_service_closing">
                 <option value="">Selecione...</option>
-                <option value="1">Serviço 1</option>
-                <option value="2">Serviço 2</option>
-                <option value="3">Serviço 3</option>
+                <option value="1">Serviço Conclusão 1</option>
+                <option value="2">Serviço Conclusão 2</option>
+                <option value="3">Serviço Conclusão 3</option>
+                <option value="4">Serviço Conclusão 4</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="exemplo-site-extension-autotext_item_closing">Item de Fechamento:</label>
+              <label for="exemplo-site-extension-autotext_item_closing">Item de Conclusão:</label>
               <select id="exemplo-site-extension-autotext_item_closing" name="autotext_item_closing">
                 <option value="">Selecione...</option>
-                <option value="1">Item 1</option>
-                <option value="2">Item 2</option>
-                <option value="3">Item 3</option>
+                <option value="1">Item Conclusão 1</option>
+                <option value="2">Item Conclusão 2</option>
+                <option value="3">Item Conclusão 3</option>
+                <option value="4">Item Conclusão 4</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="exemplo-site-extension-autotext_category_closing">Categoria de Fechamento:</label>
+              <label for="exemplo-site-extension-autotext_category_closing">Categoria de Conclusão:</label>
               <select id="exemplo-site-extension-autotext_category_closing" name="autotext_category_closing">
                 <option value="">Selecione...</option>
-                <option value="1">Categoria 1</option>
-                <option value="2">Categoria 2</option>
-                <option value="3">Categoria 3</option>
+                <option value="1">Categoria Conclusão 1</option>
+                <option value="2">Categoria Conclusão 2</option>
+                <option value="3">Categoria Conclusão 3</option>
+                <option value="4">Categoria Conclusão 4</option>
               </select>
             </div>
           </div>
